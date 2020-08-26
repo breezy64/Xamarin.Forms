@@ -10,7 +10,7 @@ using Windows.UI.ViewManagement;
 using Windows.UI.WindowManagement;
 #endif
 
-using Windows.UI.Xaml.Hosting;
+using Microsoft.UI.Xaml.Hosting;
 using Xamarin.Forms.Platform.UWP;
 
 namespace Xamarin.Forms.DualScreen
@@ -42,7 +42,7 @@ namespace Xamarin.Forms.DualScreen
 
             var frameworkElement = contentPage.CreateFrameworkElement();
 
-            Windows.UI.Xaml.Controls.Frame frame = new Windows.UI.Xaml.Controls.Frame()
+            Microsoft.UI.Xaml.Controls.Frame frame = new Microsoft.UI.Xaml.Controls.Frame()
             {
                 Content = frameworkElement
             };
@@ -76,7 +76,7 @@ namespace Xamarin.Forms.DualScreen
 					true);
 
 
-					void OnFrameSizeChanged(object sender, Windows.UI.Xaml.SizeChangedEventArgs e)
+					void OnFrameSizeChanged(object sender, Microsoft.UI.Xaml.SizeChangedEventArgs e)
                     {
 						if (windowClosed)
 							return;

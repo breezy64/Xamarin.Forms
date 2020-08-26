@@ -11,8 +11,8 @@ using Windows.UI.ViewManagement;
 using Windows.UI.WindowManagement;
 #endif
 
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Hosting;
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Hosting;
 using Xamarin.Forms;
 using Xamarin.Forms.DualScreen;
 using Xamarin.Forms.Internals;

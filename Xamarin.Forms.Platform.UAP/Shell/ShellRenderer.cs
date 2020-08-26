@@ -44,7 +44,7 @@ namespace Xamarin.Forms.Platform.UWP
 				PaneOpening += (s, e) => OnPaneOpening();
 			ItemInvoked += OnMenuItemInvoked;
 			BackRequested += OnBackRequested;
-			Style = Microsoft.UI.Xaml.Application.Current.Resources["ShellNavigationView"] as Microsoft.UI.Xaml.Style;
+			//Style = Microsoft.UI.Xaml.Application.Current.Resources["ShellNavigationView"] as Microsoft.UI.Xaml.Style;
 		}
 
 		async void OnBackRequested(Microsoft.UI.Xaml.Controls.NavigationView sender, Microsoft.UI.Xaml.Controls.NavigationViewBackRequestedEventArgs args)
@@ -81,7 +81,7 @@ namespace Xamarin.Forms.Platform.UWP
 			UpdateFlyoutBackgroundColor();
 			UpdateFlyoutBackdrop();
 
-			if(_flyoutBehavior == FlyoutBehavior.Flyout)
+			if(ShellSplitView != null && _flyoutBehavior == FlyoutBehavior.Flyout)
 				ShellSplitView.UpdateFlyoutBackdrop();
 		}
 
@@ -164,7 +164,7 @@ namespace Xamarin.Forms.Platform.UWP
 		#endregion IVisualElementRenderer
 
 
-		ShellSplitView ShellSplitView => (ShellSplitView)GetTemplateChild("RootSplitView");
+		ShellSplitView ShellSplitView => GetTemplateChild("RootSplitView") as ShellSplitView;
 		protected internal Shell Element { get; set; }
 
 		internal Shell Shell => Element;
@@ -192,7 +192,7 @@ namespace Xamarin.Forms.Platform.UWP
 
 		void UpdateFlyoutBackdrop()
 		{
-			if (_flyoutBehavior != FlyoutBehavior.Flyout)
+			if (ShellSplitView != null && _flyoutBehavior != FlyoutBehavior.Flyout)
 				return;
 
 			var splitView = ShellSplitView;

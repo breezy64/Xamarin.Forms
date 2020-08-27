@@ -1,4 +1,10 @@
 <Project>
+  <PropertyGroup>
+    <WindowsXamlEnableOverview>true</WindowsXamlEnableOverview>
+    <UsingMicrosoftNETSdk>false</UsingMicrosoftNETSdk>
+    <IsWinUIAlpha Condition="'$(IsWinUIAlpha)' == ''">true</IsWinUIAlpha>
+    <WindowsKitsPath Condition="'$(IsWinUIAlpha)' == 'true'">WinUI-Alpha-Projects-Don-t-Use-SDK-Xaml-Tools</WindowsKitsPath>
+  </PropertyGroup>
   <PropertyGroup Condition=" '$(UwpMinTargetFrameworks)' != '' ">
     <TargetFrameworks>$(UwpMinTargetFrameworks)</TargetFrameworks>
   </PropertyGroup>

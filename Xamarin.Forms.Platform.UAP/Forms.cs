@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
+using Microsoft.UI.Xaml;
 using Windows.ApplicationModel.Activation;
 using Windows.ApplicationModel.Resources.Core;
-using Microsoft.UI.Xaml;
 using Xamarin.Forms.Internals;
 using Xamarin.Forms.Platform.UWP;
 using WSolidColorBrush = Microsoft.UI.Xaml.Media.SolidColorBrush;
@@ -20,7 +20,7 @@ namespace Xamarin.Forms
 
 		public static bool IsInitialized { get; private set; }
 		
-		public static void Init(IActivatedEventArgs launchActivatedEventArgs, IEnumerable<Assembly> rendererAssemblies = null)
+		public static void Init(ILaunchActivatedEventArgs launchActivatedEventArgs, IEnumerable<Assembly> rendererAssemblies = null)
 		{
 			if (IsInitialized)
 				return;
